@@ -1,13 +1,31 @@
 body{
-    padding: 0;
+    display: grid;
+    height: 100vh;
+    margin: 0;
+    grid-template-rows: 1fr 2fr 1fr;
 }
 
 #board{
     width: 100vw;
 }
 
+#player1, #player2{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+#hand1, #hand2, #interact1, #interact2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .reversed{
     transform: rotate(180deg);
+}
+
+.reachable{
+    background-color: #EAF4FF;
 }
 
 table{
@@ -16,11 +34,11 @@ table{
 }
 
 td{
-    width: 40px;
-    height: 40px;
+    padding: 4px;
     border: 1px solid #667380;
+    line-height: 0;
 }
 
 img{
-    height: 100%;
+    width: 30px;
 }
