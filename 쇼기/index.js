@@ -52,7 +52,7 @@ function reset(){
             const pieceInfo = position[i][j];
             if(pieceInfo != null){
                 const piece = document.createElement('img');
-                piece.src = `https://jedenzero.github.io/pantesa/%EC%87%BC%EA%B8%B0/imgs/${encodeURIComponent(pieceInfo[0])}.png`;
+                piece.src = `./imgs/${pieceInfo[0]}.png`;
 																
                 if(pieceInfo[1] == -1){
                     piece.classList.add('reversed');
