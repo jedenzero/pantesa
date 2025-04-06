@@ -52,7 +52,8 @@ function reset(){
             const pieceInfo = position[i][j];
             if(pieceInfo != null){
                 const piece = document.createElement('img');
-                piece.src = `./imgs/${pieceInfo[0]}.png`;
+                piece.src = encodeURI(`https://raw.githubusercontent.com/jedenzero/pantesa/main/쇼기/imgs/${pieceInfo[0]}.png`);
+																
                 if(pieceInfo[1] == -1){
                     piece.classList.add('reversed');
                 }
