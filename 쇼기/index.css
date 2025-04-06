@@ -1,0 +1,26 @@
+body{
+    padding: 0;
+}
+
+#board{
+    width: 100vw;
+}
+
+.reversed{
+    transform: rotate(180deg);
+}
+
+table{
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+td{
+    width: 40px;
+    height: 40px;
+    border: 1px solid #667380;
+}
+
+img{
+    height: 100%;
+}
