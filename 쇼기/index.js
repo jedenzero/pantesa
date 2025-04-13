@@ -23,7 +23,13 @@ const defaultPosition = [
 ];
 const movingRules = {
     보병: [[1, 0]],
-    계마: [[2, -1], [2, 1]]
+				향차: [[1, 0, 1]],
+    계마: [[2, -1], [2, 1]],
+				은장: [[1, -1], [1, 0], [1, 1], [-1, -1], [-1, 1]],
+				금장: [[1, -1], [1, 0], [1, 1], [0, -1], [0, 1], [-1, 0]],
+				각행: [[1, -1, 1], [1, 1, 1], [-1, -1, 1], [-1, 1, 1]],
+				비차: [[1, 0, 1], [0, -1, 1], [0, 1, 1], [-1, 0, 1]],
+				왕장: [[1, -1], [1, 0], [1, 1], [0, -1], [0, 1], [-1, -1], [-1, 0], [-1, 1]]
 } 
 
 function reset(){
@@ -79,9 +85,10 @@ function reset(){
                 const player = turn == 1 ? 1 : 2;
                 if(cell.innerHTML != ''){
                     position[row][col][1] = turn;
-                    hands[player].push(position[row][col]);
+                    hands[player-1].push(position[row][col]);
                     const hand = document.getElementById(`hand${player}`);
-                    hand.appendChild(cell.firstChild);
+																				cell.firstChild.classList.toggle('reversed');
+	                   hand.appendChild(cell.firstChild);
                 }
                 position[row][col] = position[originRow][originCol];
                 position[originRow][originCol] = null;
